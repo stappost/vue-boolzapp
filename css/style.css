@@ -14,6 +14,9 @@ body{
 .banner{
     background-color: #9BEAFF;
 }
+.bg_lightgreen{
+    background-color: #D5F9BA;
+}
 
 .square{
     top: 5vh;
@@ -26,7 +29,7 @@ body{
     margin: 15px 15px 0;
 }
 .icons i{
-    margin: 0 5px;
+    margin: 10px 5px;
     font-size: 20px;
 }
 .bottom i{
@@ -49,6 +52,7 @@ body{
 .users{
     font-weight: 500;
     margin: 10px 0;
+    position: relative;
 }
 .users img{
     width: 50px;
@@ -59,6 +63,10 @@ body{
 .users-chat{
     height: calc(100% - 75px - 60px);
 }
+.users .position-absolute{
+    right: 5px;
+    top: 5px;
+}
 /* CHAT  */
 main .content-lg{
     background: url(../img/mine.jpg);
@@ -68,14 +76,46 @@ main .content-lg{
     height: calc(100% - 65px);
 }
 
+/* MESSAGE  */
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+.message.bg_lightgreen{
+    padding: 15px;
+    margin-top: 10px;
+    border-radius: 20px;
+    float: right;
+}
+.message.bg-light{
+    padding: 15px;
+    border-radius: 20px;
+    margin-top: 10px;
+    float: left;
+}
+.message{
+    position: relative;
+    width: 200px;
+}
+.clearfix .position-absolute{
+    bottom: 5px;
+    right: 10px;
+    color: grey;
+    font-size: 10px;
+}
+
 /* search  */
 .h-60{
     height: 60px;
     padding-top: 10px;
 }
 
-
-
+/* TEXT FORMAT  */
+.text-sm{
+    color: grey;
+    font-size: 10px;
+}
 /* MISURE DA ELIMINARE DOPO MESSO IL CONTENUTO  */
  .bottom{
     width: 100%;
