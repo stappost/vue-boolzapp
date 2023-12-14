@@ -8,21 +8,16 @@ body{
     height: 100vh;
     background:linear-gradient(to bottom, #009688 15vh, #DCDBD2 15vh) ;
 }
+.bg_grey{
+    background-color: #EAEAEA;
+}
+.banner{
+    background-color: #9BEAFF;
+}
 
 .square{
     top: 5vh;
     left: 10vw;
-}
-/* USERS  */
-.users{
-    font-weight: 600;
-    margin: 10px 0;
-}
-.users img{
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    margin-left: 10px; 
 }
 
 /* ICONS  */
@@ -43,23 +38,41 @@ body{
     padding: 10px;
     font-size: 25px;
     border-radius: 50%;
-    margin: 0 10px;
+    margin-left: 20px;
+    margin-right: 5px;
     background-color: white;
-    color: aqua;
+    color: #9BEAFF;
 }
-/* BACKGROUND  */
+
+
+/* USERS  */
+.users{
+    font-weight: 500;
+    margin: 10px 0;
+}
+.users img{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-left: 10px; 
+}
+.users-chat{
+    height: calc(100% - 75px - 60px);
+}
 /* CHAT  */
-.bg_grey{
-    background-color: #EAEAEA;
-}
-.banner{
-    background-color: #8EDAFC;
-}
 main .content-lg{
     background: url(../img/mine.jpg);
     background-repeat: repeat;
 }
+.chat{
+    height: calc(100% - 65px);
+}
 
+/* search  */
+.h-60{
+    height: 60px;
+    padding-top: 10px;
+}
 
 
 
@@ -78,14 +91,12 @@ main .content, main .content-lg{
 }
 
 .content{
-    width: 30vW;
-    border: 1px solid black;
+    width: 30vW; 
 }
 .content-lg{
     width: 50vW;
-    border: 1px solid black;
 }
 
 .banner{
-    /* height: 75px; */
+    height: 75px; 
 } 
