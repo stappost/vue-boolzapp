@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* SFONDO  */
+body{
+    height: 100vh;
+    background:linear-gradient(to bottom, rgb(61, 180, 61) 15vh, rgb(204, 202, 202) 15vh) ;
+}
+
+.square{
+    top: 5vh;
+    left: 10vw;
+}
+
+
+/* MISURE DA ELIMINARE DOPO MESSO IL CONTENUTO  */
+.bottom{
+    height: 75px;
+    width: 100%;
+    background-color: beige;
+    position: absolute;
+    bottom: 0;
+}
+header .content, header .content-lg{
+    height: 50px;
+}
+main .content, main .content-lg{
+    position: relative;
+    height: 700px;
+}
+
+.content{
+    width: 30vW;
+    border: 1px solid black;
+}
+.content-lg{
+    width: 50vW;
+    border: 1px solid black;
+}
+
+.banner{
+    height: 50px;
+}
