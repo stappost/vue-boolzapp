@@ -136,7 +136,7 @@
                                     <!-- BOTTOM WITH TEXT-MESSAGE-BAR  -->
                                     <div class="bottom d-flex align-items-center">
                                         <i class="fa-regular fa-face-smile" style="color: #a0a0a2;"></i>
-                                        <input type="text" class="form-control" placeholder="Scrivi un messaggio">
+                                        <input type="text" class="form-control" placeholder="Scrivi un messaggio" v-model='new_message' @keyup.enter="send_message()">
                                         <i class="fa-solid fa-microphone"></i>
                                     </div>
                                 </div>
@@ -147,6 +147,7 @@
             </main>
         </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3.4.4/build/global/luxon.min.js"></script>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="./script/script.js"></script>
 </body>

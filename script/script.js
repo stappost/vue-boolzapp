@@ -1,8 +1,11 @@
 const {createApp} = Vue;
+let DateTime = luxon.DateTime;
+
 
 createApp({
     data(){
         return{
+            new_message: '',
             i: 0,
             contacts: [
                 {
@@ -171,8 +174,26 @@ createApp({
     },
     methods:{
         active_user(index){
-            this.i = index;
-            
+            this.i = index; 
+        },
+        send_message(){
+            let array = this.contacts;
+            let index = this.i;
+            let ora = DateTime.now().toLocaleString(DateTime.DATETIME_SHORT_WITH_SECONDS);
+
+            this.contacts[this.i].messages.push({
+                date: ora,
+                message: this.new_message,
+                status: 'sent'
+            });
+            this.new_message = ''
+            setTimeout(() => {
+                array[index].messages.push({
+                    date: ora,
+                    message: 'ok',
+                    status: 'received'
+                })
+            },1000)
         }
     }
 }).mount('#app')
