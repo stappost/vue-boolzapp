@@ -80,7 +80,14 @@
                                     </div>
                                     <!-- CONTACTS  -->
                                     <div class="users-chat overflow-y-scroll">
-
+                                        <ul class="list-unstyled">
+                                            <li v-for="(user,index) in contacts">
+                                                <div class="users my-3 border-bottom pb-3">
+                                                    <img :src="user.avatar" :alt="user.name">
+                                                    {{user.name}}
+                                                </div>
+                                            </li>
+                                        </ul>
                                     </div>   
                                 </div>
                             </div>
