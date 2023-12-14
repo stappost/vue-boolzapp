@@ -6,26 +6,72 @@
 /* SFONDO  */
 body{
     height: 100vh;
-    background:linear-gradient(to bottom, rgb(61, 180, 61) 15vh, rgb(204, 202, 202) 15vh) ;
+    background:linear-gradient(to bottom, #009688 15vh, #DCDBD2 15vh) ;
 }
 
 .square{
     top: 5vh;
     left: 10vw;
 }
+/* USERS  */
+.users{
+    font-weight: 600;
+    margin: 10px 0;
+}
+.users img{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-left: 10px; 
+}
+
+/* ICONS  */
+.icons{
+    text-align: end;
+    margin: 15px 15px 0;
+}
+.icons i{
+    margin: 0 5px;
+    font-size: 20px;
+}
+.bottom i{
+    margin: 0 30px;
+    font-size: 1.5rem;
+}
+
+.banner i{
+    padding: 10px;
+    font-size: 25px;
+    border-radius: 50%;
+    margin: 0 10px;
+    background-color: white;
+    color: aqua;
+}
+/* BACKGROUND  */
+/* CHAT  */
+.bg_grey{
+    background-color: #EAEAEA;
+}
+.banner{
+    background-color: #8EDAFC;
+}
+main .content-lg{
+    background: url(../img/mine.jpg);
+    background-repeat: repeat;
+}
+
+
 
 
 /* MISURE DA ELIMINARE DOPO MESSO IL CONTENUTO  */
-.bottom{
-    height: 75px;
+ .bottom{
     width: 100%;
     background-color: beige;
     position: absolute;
     bottom: 0;
+    height: 65px;
 }
-header .content, header .content-lg{
-    height: 50px;
-}
+
 main .content, main .content-lg{
     position: relative;
     height: 700px;
@@ -41,5 +87,5 @@ main .content, main .content-lg{
 }
 
 .banner{
-    height: 50px;
-}
+    /* height: 75px; */
+} 
