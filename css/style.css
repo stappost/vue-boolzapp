@@ -17,6 +17,9 @@ body{
 .bg_lightgreen{
     background-color: #D5F9BA;
 }
+.bg_dark{
+    background-color: rgb(200, 200, 200);
+}
 
 .square{
     top: 5vh;
@@ -51,7 +54,7 @@ body{
 /* USERS  */
 .users{
     font-weight: 500;
-    margin: 10px 0;
+    padding: 10px 0;
     position: relative;
 }
 .users img{
@@ -62,6 +65,7 @@ body{
 }
 .users-chat{
     height: calc(100% - 75px - 60px);
+    cursor: pointer;
 }
 .users .position-absolute{
     right: 5px;

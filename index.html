@@ -39,12 +39,12 @@
                             <div class="d-inline-block">
                                 <!-- per posizionare oggetti all'interno  -->
                                 <div class="content-lg  d-flex justify-content-between bg_grey">
-                                    <div class="user-active" >
+                                    <div class="user-active">
                                         <!-- CONTATTO ATTIVO  -->
-                                        <div class="users d-flex">
-                                            <img src="./img/avatar_1.jpg" alt="Michele">
+                                        <div  class="users d-flex" >
+                                            <img :src="contacts[i].avatar" :alt="contacts[i].name">
                                             <div>
-                                                Michele
+                                                {{contacts[i].name}}
                                                 <div class="text-sm">
                                                     Ultimo accesso oggi alle 12:00
                                                 </div>
@@ -86,9 +86,9 @@
                                     <!-- CONTACTS  -->
                                     <div class="users-chat overflow-y-scroll">
                                         <ul class="list-unstyled">
-                                            <li v-for="(user,index) in contacts">
-                                                <div class="users my-3 border-bottom pb-3 d-flex">
-                                                    <img :src="user.avatar" :alt="user.name">
+                                            <li v-for="(user, index) in contacts">
+                                                <div class="users mb-3 border-bottom pb-3 d-flex"  @click="active_user(index)" :class="i == index ? 'bg_dark' : ''">
+                                                    <img :src="user.avatar" :alt="user.name" >
                                                     <div>
                                                         {{user.name}}
                                                         <div class="text-sm">
@@ -108,16 +108,21 @@
                                 <div class="content-lg ">
                                     <!-- CHAT ACTIVE  -->
                                     <div class="chat overflow-y-scroll">
-                                        <div class="clearfix">
-                                            <div class="bg_lightgreen mx-5 message">
-                                                hai portato a spasso il cane?
+                                        <div class="clearfix" v-for="(message, index) in contacts[i].messages">
+                                            <div class="bg_lightgreen mx-5 message" v-if="contacts[i].messages[index].status == 'sent'">
+                                                {{message.message}}
                                                 <div class="position-absolute">
-                                                    15:30
+                                                    {{message.date}}
                                                 </div>
                                             </div>
-                                            
-                                        </div>
-                                        <div class="clearfix">
+                                            <div v-else class="bg-light mx-5 message">
+                                                {{message.message}}
+                                                <div class="position-absolute">
+                                                    {{message.date}}
+                                                </div>
+                                            </div>
+                                        </div> 
+                                        <!-- <div class="clearfix">
                                             <div class="bg_lightgreen mx-5 message">
                                                 ricordati di stendere i panni
                                                 <div class="position-absolute">
@@ -125,15 +130,8 @@
                                                 </div>
                                             </div>
                                             
-                                        </div>
-                                        <div class="clearfix">
-                                            <div class="bg-light mx-5 message">
-                                                tutto fatto!
-                                                <div class="position-absolute">
-                                                    16:15
-                                                </div>
-                                            </div>
-                                        </div>
+                                        </div>-->
+                                        
                                     </div>
                                     <!-- BOTTOM WITH TEXT-MESSAGE-BAR  -->
                                     <div class="bottom d-flex align-items-center">
