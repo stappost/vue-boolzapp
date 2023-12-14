@@ -5,6 +5,7 @@ let DateTime = luxon.DateTime;
 createApp({
     data(){
         return{
+            filter: '',
             new_message: '',
             i: 0,
             contacts: [
@@ -172,6 +173,9 @@ createApp({
               ]
         }
     },
+    created(){
+        this.filter_user()
+    },
     methods:{
         active_user(index){
             this.i = index; 
@@ -194,6 +198,19 @@ createApp({
                     status: 'received'
                 })
             },1000)
+        },
+        filter_user(){
+            let text = this.filter.toLowerCase()
+            this.contacts.forEach(element => {  
+                let username = element.name.toLowerCase()    
+                if(!username.includes(text)){
+                    element.visible = false
+                }
+                else{
+                    element.visible = true
+                }
+            });
+            
         }
     }
 }).mount('#app')

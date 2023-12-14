@@ -80,13 +80,13 @@
                                     <div class="bg_grey h-60">
                                         <div class="input-group">
                                             <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-magnifying-glass" style="color: #a0a0a2;"></i></span>
-                                            <input type="text" class="form-control" placeholder="Cerca o inizia una vuova chat" aria-label="Username" aria-describedby="basic-addon1">
+                                            <input type="text" class="form-control" v-model="filter" @keyup="filter_user()" placeholder="Cerca o inizia una vuova chat"  aria-describedby="basic-addon1">
                                         </div> 
                                     </div>
                                     <!-- CONTACTS  -->
                                     <div class="users-chat overflow-y-scroll">
                                         <ul class="list-unstyled">
-                                            <li v-for="(user, index) in contacts">
+                                            <li v-for="(user, index) in contacts" v-show="user.visible">
                                                 <div class="users mb-3 border-bottom pb-3 d-flex"  @click="active_user(index)" :class="i == index ? 'bg_dark' : ''">
                                                     <img :src="user.avatar" :alt="user.name" >
                                                     <div>
