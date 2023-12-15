@@ -235,10 +235,22 @@ createApp({
         },
         // che elimina messaggio 
         delete_msg(index){
+          if(this.contacts[this.i].messages.length != 1){
+            this.contacts[this.i].messages.splice(index, 1)
+            this.menu_message.show = false
+            this.menu_message.index = false
+          }
+          else{
+            this.contacts[this.i].messages.push({
+              date: "",
+              message: "Scrivimi un messaggio...",
+              status: ''
+          });
           this.contacts[this.i].messages.splice(index, 1)
-          this.menu_message.show = false
-          this.menu_message.index = false
-        }
+            this.menu_message.show = false
+            this.menu_message.index = false
+          }
+        },
 
     }
 }).mount('#app')
