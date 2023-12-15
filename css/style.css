@@ -102,6 +102,32 @@ main .content-lg{
     position: relative;
     width: 200px;
 }
+.menu{
+    display: none;
+    font-size: 15px;
+}
+.list_menu{
+    background-color: #fff;
+    position: absolute;
+    top: 80%;
+    right: 0;
+    display: block;
+    z-index: 1;
+}
+.list_menu > li{
+    padding: 10px;
+    cursor: pointer;
+    border: 1px solid rgb(200, 200, 200);
+}
+.list_menu > li:hover{
+    background-color: rgb(198, 198, 198);
+}
+.message:hover .menu{
+    display: inline-block; 
+    position: absolute;
+    right: 10px;
+    top: 10px;  
+}
 .clearfix .position-absolute{
     bottom: 5px;
     right: 10px;
@@ -118,7 +144,7 @@ main .content-lg{
 /* TEXT FORMAT  */
 .text-sm{
     color: grey;
-    font-size: 10px;
+    font-size: 15px;
 }
 /* MISURE DA ELIMINARE DOPO MESSO IL CONTENUTO  */
  .bottom{

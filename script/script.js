@@ -8,6 +8,10 @@ createApp({
             filter: '',
             new_message: '',
             i: 0,
+            menu_message:{
+              show:false,
+              index:false
+            },
             contacts: [
                 {
                   name: 'Michele',
@@ -178,7 +182,8 @@ createApp({
     },
     methods:{
         active_user(index){
-            this.i = index; 
+            this.i = index;
+            this.menu_message.show = false
         },
         send_message(){
             let array = this.contacts;
@@ -209,8 +214,25 @@ createApp({
                 else{
                     element.visible = true
                 }
-            });
-            
+            });   
+        },
+        show_menu(index){
+          if(!this.menu_message.show || this.menu_message.index != index){
+            this.menu_message.index = index
+            if(this.menu_message.index == index){
+              this.menu_message.show = true
+            }
+          }
+          else{
+            this.menu_message.show = false
+          }
+        },
+        delete_msg(index){
+          console.log(index)
+          this.contacts[this.i].messages.splice(index, 1)
+          this.menu_message.show = false
+          this.menu_message.index = false
         }
+
     }
 }).mount('#app')
