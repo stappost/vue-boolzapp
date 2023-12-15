@@ -5,8 +5,11 @@ let DateTime = luxon.DateTime;
 createApp({
     data(){
         return{
+            // variabile per il filtro 
             filter: '',
+            // variabile per invio messaggio 
             new_message: '',
+            // indice utente attivo 
             i: 0,
             menu_message:{
               show:false,
@@ -185,6 +188,7 @@ createApp({
             this.i = index;
             this.menu_message.show = false
         },
+        // invio messaggio e risposta 
         send_message(){
             let array = this.contacts;
             let index = this.i;
@@ -204,6 +208,7 @@ createApp({
                 })
             },1000)
         },
+        // filtro utenti 
         filter_user(){
             let text = this.filter.toLowerCase()
             this.contacts.forEach(element => {  
@@ -216,6 +221,7 @@ createApp({
                 }
             });   
         },
+        // mostrare menu 
         show_menu(index){
           if(!this.menu_message.show || this.menu_message.index != index){
             this.menu_message.index = index
@@ -227,8 +233,8 @@ createApp({
             this.menu_message.show = false
           }
         },
+        // che elimina messaggio 
         delete_msg(index){
-          console.log(index)
           this.contacts[this.i].messages.splice(index, 1)
           this.menu_message.show = false
           this.menu_message.index = false

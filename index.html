@@ -86,8 +86,8 @@
                                     <!-- CONTACTS  -->
                                     <div class="users-chat overflow-y-scroll">
                                         <ul class="list-unstyled">
-                                            <li v-for="(user, index) in contacts" v-show="user.visible">
-                                                <div class="users mb-3 border-bottom pb-3 d-flex"  @click="active_user(index)" :class="i == index ? 'bg_dark' : ''">
+                                            <li v-for="(user, index) in contacts" v-show="user.visible" :class="i == index ? 'bg_dark' : ''">
+                                                <div class="users  border-bottom pb-3 d-flex"  @click="active_user(index)" >
                                                     <img :src="user.avatar" :alt="user.name" class="me-2">
                                                     <div>
                                                         {{user.name}}
@@ -114,6 +114,7 @@
                                                 <div class="position-absolute">
                                                     {{message.date}}
                                                 </div>
+                                                <!-- MENU MESSAGE SEND-->
                                                 <div class="menu" @click="show_menu(index)">
                                                     <i class="fa-solid fa-chevron-down" style="color: #a0a0a2;"></i>
                                                 </div>
@@ -130,7 +131,7 @@
                                                 <div class="menu" @click="show_menu(index)">
                                                     <i class="fa-solid fa-chevron-down" style="color: #a0a0a2;"></i>
                                                 </div>
-                                                <!-- MENU MESSAGE -->
+                                                <!-- MENU MESSAGE RECEIVED-->
                                                 <ul class="list-unstyled list_menu"  v-show="menu_message.show && menu_message.index == index"> 
                                                     <li>Info messaggio </li>
                                                     <li @click="delete_msg(index)">Elimina messaggio</li>
