@@ -45,7 +45,7 @@
                                             <img :src="contacts[i].avatar" :alt="contacts[i].name">
                                             <div>
                                                 {{contacts[i].name}}
-                                                <div class="text-sm">
+                                                <div class="text-sm" v-if="contacts[i].messages.length > 0">
                                                     Ultimo accesso {{contacts[i].messages[contacts[i].messages.length - 1].date}}
                                                 </div>
                                             </div>
@@ -91,10 +91,10 @@
                                                     <img :src="user.avatar" :alt="user.name" class="me-2">
                                                     <div>
                                                         {{user.name}}
-                                                        <div class="text-sm">
+                                                        <div class="text-sm" v-if="contacts[index].messages.length > 0">
                                                             {{contacts[index].messages[contacts[index].messages.length - 1].message.slice(0,30) + '...'}}
                                                         </div>
-                                                        <div class="position-absolute text-sm">
+                                                        <div class="position-absolute text-sm" v-if="contacts[index].messages.length > 0">
                                                             {{contacts[index].messages[contacts[index].messages.length - 1].date}}
                                                         </div>
                                                     </div> 
@@ -123,7 +123,7 @@
                                                     <li @click="delete_msg(index)">Elimina messaggio</li>
                                                 </ul>
                                             </div>
-                                            <div v-else class="bg-light mx-5 message">
+                                            <div v-if="contacts[i].messages[index].status == 'received'" class="bg-light mx-5 message">
                                                 {{message.message}}
                                                 <div class="position-absolute">
                                                     {{message.date}}
