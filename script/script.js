@@ -181,7 +181,8 @@ createApp({
         }
     },
     created(){
-        this.filter_user()
+        this.filter_user();
+        this.autoscroll()
     },
     methods:{
         active_user(index){
@@ -207,6 +208,10 @@ createApp({
                     status: 'received'
                 })
             },1000)
+            setTimeout(function(){
+              let chat = document.getElementById("chat")
+              chat.scrollTop= 999 
+              }, 1500);
         },
         // filtro utenti 
         filter_user(){
@@ -235,22 +240,17 @@ createApp({
         },
         // che elimina messaggio 
         delete_msg(index){
-          // if(this.contacts[this.i].messages.length != 1){
-          //   this.contacts[this.i].messages.splice(index, 1)
-          //   this.menu_message.show = false
-          //   this.menu_message.index = false
-          // }
-          // else{
-          //   this.contacts[this.i].messages.push({
-          //     date: "",
-          //     message: "Scrivimi un messaggio...",
-          //     status: ''
-          // });
           this.contacts[this.i].messages.splice(index, 1)
             this.menu_message.show = false
             this.menu_message.index = false
-          // }
+          
         },
+        autoscroll(){
+          setTimeout(function(){
+          let chat = document.getElementById("chat")
+          chat.scrollTop= 999 
+          }, 500);
+        }
 
     }
 }).mount('#app')
