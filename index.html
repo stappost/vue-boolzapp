@@ -109,7 +109,7 @@
                                     <!-- CHAT ACTIVE  -->
                                     <div class="chat overflow-y-scroll" id="chat" >
                                         <div class="clearfix" v-for="(message, index) in contacts[i].messages">
-                                            <div class="bg_lightgreen mx-5 message" v-if="contacts[i].messages[index].status == 'sent'">
+                                            <div class="bg_lightgreen mx-5 my-2 message" v-if="contacts[i].messages[index].status == 'sent'">
                                                 {{message.message}}
                                                 <div class="position-absolute">
                                                     {{message.date}}
@@ -123,7 +123,7 @@
                                                     <li @click="delete_msg(index)">Elimina messaggio</li>
                                                 </ul>
                                             </div>
-                                            <div v-if="contacts[i].messages[index].status == 'received'" class="bg-light mx-5 message">
+                                            <div v-if="contacts[i].messages[index].status == 'received'" class="bg-light mx-5 my-2 message">
                                                 {{message.message}}
                                                 <div class="position-absolute">
                                                     {{message.date}}

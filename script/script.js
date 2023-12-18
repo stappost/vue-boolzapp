@@ -11,6 +11,8 @@ createApp({
             new_message: '',
             // indice utente attivo 
             i: 0,
+            // RISPOSTE 
+            answer:["Mentalmente? Fisicamente? Finanziariamente? Dal punto di vista spirituale? Socioeconomicamente? Puoi essere un po' più specifico su cosa intendi?"," Hai qualcosa da spettegolare? Allora mi dispiace, non ho tempo.", "Il mio avvocato mi ha detto di non rispondere a questa domanda.", "Ho appena incontrato un vecchio amico. Pensa che dovrei uscire con te.", "Mi appello al quinto emendamento.","Sono un po' impegnato a uccidere draghi.", "Ok, sarebbe meglio se mi chiedessi di uscire.","Fantastico! Ma sono totalmente di parte.", "Perché tutte queste domande? Sei un poliziotto?","Quanto sei disposto a pagarmi se te lo dico?","Hai tempo di parlarne, visto che è una storia così lunga?", "Sono pronto per un pisolino."," Fantastico! Sono assolutamente entusiasta di ricevere questa domanda per la millesima volta oggi.", "Come sono? Diciamo che sono l'incarnazione della perfezione e lasciamo perdere."  ],
             menu_message:{
               show:false,
               index:false
@@ -194,6 +196,7 @@ createApp({
             let array = this.contacts;
             let index = this.i;
             let ora = DateTime.now().toLocaleString(DateTime.DATETIME_SHORT_WITH_SECONDS);
+            let ans = this.answer[Math.floor(Math.random()* this.answer.length)]
 
             this.contacts[this.i].messages.push({
                 date: ora,
@@ -204,14 +207,15 @@ createApp({
             setTimeout(() => {
                 array[index].messages.push({
                     date: ora,
-                    message: 'ok',
+                    message: ans,
                     status: 'received'
                 })
             },1000)
             setTimeout(function(){
               let chat = document.getElementById("chat")
               chat.scrollTop= 999 
-              }, 1500);
+              }, 1100);
+            
         },
         // filtro utenti 
         filter_user(){

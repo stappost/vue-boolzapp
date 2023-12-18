@@ -101,6 +101,7 @@ main .content-lg{
 .message{
     position: relative;
     width: 200px;
+    word-break: break-all;
 }
 .menu{
     display: none;
