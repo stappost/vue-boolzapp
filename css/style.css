@@ -170,3 +170,7 @@ main .content, main .content-lg{
 .banner{
     height: 75px; 
 } 
+
+.pointer{
+    cursor: pointer;
+}
